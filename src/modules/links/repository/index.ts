@@ -25,7 +25,7 @@ class LinksRepository {
         return !(!!shortExist);
     }
 
-    public async create(data: Omit<LinkCreationAttributes, 'shortUrl'>): Promise<string> {
+    public async create(data: Omit<LinkCreationAttributes, 'shortUrl' | 'expiresAt'>): Promise<string> {
         let resultShortUrl = undefined
         if (!data.alias) {
             resultShortUrl = await this.generateUniqueLink();

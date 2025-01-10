@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>test 3205.team</title>
+</head>
+
+<style>
+    input  {
+        margin-bottom: 5px;
+    }
+</style>
+<body>
+    <form class="inputForm" method="POST">
+        <input id="originalLink" type="text" placeholder="Исходная ссылка"><br>
+        <input id="alias" type="text" placeholder="Alias (Опционально)"><br>
+        <input id="expires" type="number" placeholder="Время жизни (сек)"><br>
+        <input type="submit" onclick="getShortUrl(); return false" value="Создать короткую ссылку"><br><br>
+    </form>
+    <a id="resultLink" href="#" style="display: none"></a>
+</body>
+<script src="script.js"></script>
+</html>

@@ -28,7 +28,7 @@ export const BaseRoute: FastifyPluginCallback = (instance, opts, done) => {
                 },
             },
         },
-        async (req: FastifyRequest<{Body: Omit<LinkCreationAttributes, 'shortUrl'>}>, reply) => {
+        async (req: FastifyRequest<{Body: Omit<LinkCreationAttributes, 'shortUrl' | 'expiresAt'>}>, reply) => {
             const newLink = await linksRepository.create(req.body);
             reply.status(201).send(newLink);
         },

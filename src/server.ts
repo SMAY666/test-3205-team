@@ -8,6 +8,10 @@ export const server = fastify({
 });
 
 void server.register(BaseRoute, '/');
+void server.register(import('@fastify/cors'), {
+    origin: 'http://localhost:63342',
+    methods: 'POST, GET, DELETE',
+})
 void mysql.sync();
 
 
